@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nested-tags-tree-app/static/css/main.5f01ef3b.css",
+    "main.js": "/nested-tags-tree-app/static/js/main.ac3093cc.js",
+    "index.html": "/nested-tags-tree-app/index.html",
+    "main.5f01ef3b.css.map": "/nested-tags-tree-app/static/css/main.5f01ef3b.css.map",
+    "main.ac3093cc.js.map": "/nested-tags-tree-app/static/js/main.ac3093cc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f01ef3b.css",
+    "static/js/main.ac3093cc.js"
+  ]
+}
