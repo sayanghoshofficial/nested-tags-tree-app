@@ -33,6 +33,10 @@ const TagView = ({ tree, handleInsertNode, handleEditNode, handleDeleteNode }) =
 
   };
 
+  const handleDelete =()=>{
+    handleDeleteNode(tree.id)
+  }
+
   return (
     <div>
       <div className={tree.id === 1 ? "inputContainer" : "childContainer"}>
@@ -90,8 +94,15 @@ const TagView = ({ tree, handleInsertNode, handleEditNode, handleDeleteNode }) =
                       </>
                     }
                     handleClick={handleNewChild} />
-                  <Action className="reply" type="Edit" handleClick={() => setEdit(true)} />
-                  <Action className="reply" type="Delete" />
+                  <Action 
+                  className="reply" 
+                  type="Edit" 
+                  handleClick={() => setEdit(true)} />
+                  <Action 
+                  className="reply" 
+                  type="Delete"
+                  handleClick={handleDelete}
+                  />
                 </>
               )}
             </div>
@@ -108,8 +119,18 @@ const TagView = ({ tree, handleInsertNode, handleEditNode, handleDeleteNode }) =
               onChange={(e) => setInput(e.target.value)}
               placeholder='type...'
             />
-            <Action className="reply" type="Add" handleClick={onAddChild} />
-            <Action className="reply" type="Cancel" handleClick={() => { setShowInput(false); setExpandArrow(false); }} />
+            <Action 
+            className="reply" 
+            type="Add" 
+            handleClick={onAddChild} />
+            <Action 
+            className="reply" 
+            type="Cancel" 
+            handleClick={() => { 
+              setShowInput(false); 
+              setExpandArrow(false); 
+            }} 
+            />
           </div>
         )}
         {tree?.items?.map((t) => {
