@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BiSolidRightArrow, BiSolidDownArrow } from 'react-icons/bi';
+import Action from './Action';
 
 const TagView = ({ tree }) => {
   const [input, setInput] = useState("");
@@ -21,15 +22,21 @@ const TagView = ({ tree }) => {
               onChange={(e) => setInput(e.target.value)}
               placeholder='type...'
             />
-            <div className='reply comment' onClick={onAddComment}>
-              Add Child
-            </div>
+            <Action className="reply comment" type="Add Child" handleClick={onAddComment} />
           </>
         ) : (
-          <span style={{ wordWrap: "break-word" }}>{tree.name}</span>
+          <>
+            <span style={{ wordWrap: "break-word" }}>{tree.name}</span>
+            <div style={{ display: 'flex', marginTop: 5 }}>
+              <Action className="reply" type="Add" />
+              <Action className="reply" type="Edit" />
+              <Action className="reply" type="Delete" /></div>
+          </>
         )}
       </div>
-      {tree?.items?.map((t) => {return <TagView key={t.id} tree={t}/>})}
+      <div style={{ paddingLeft: 25 }}>
+        {tree?.items?.map((t) => { return <TagView key={t.id} tree={t} /> })}
+      </div>
     </div>
   );
 };
