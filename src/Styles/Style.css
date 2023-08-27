@@ -4,8 +4,14 @@
   
   .App {
     margin-top: 20px;
-    width: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
+ 
   
   .childContainer {
     margin-top: 6px;
@@ -17,7 +23,9 @@
     cursor: pointer;
     border-radius: 5px;
   }
-  
+  .exportBtn{
+    margin-top: 50px;
+  }
   .childContainer:hover {
     background-color: #d3d3d3bf;
   }

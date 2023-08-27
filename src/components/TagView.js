@@ -38,7 +38,7 @@ const TagView = ({ tree, handleInsertNode, handleEditNode, handleDeleteNode }) =
   }
 
   return (
-    <div>
+    <div className='tagView'>
       <div className={tree.id === 1 ? "inputContainer" : "childContainer"}>
         {tree.id === 1 ? (
           <>
