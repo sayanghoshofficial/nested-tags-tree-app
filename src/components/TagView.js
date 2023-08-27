@@ -33,7 +33,7 @@ const TagView = ({ tree, handleInsertNode, handleEditNode, handleDeleteNode }) =
 
   };
 
-  const handleDelete =()=>{
+  const handleDelete = () => {
     handleDeleteNode(tree.id)
   }
 
@@ -74,12 +74,12 @@ const TagView = ({ tree, handleInsertNode, handleEditNode, handleDeleteNode }) =
                     className="reply"
                     type="Cancel"
                     handleClick={() => {
-                      if(inputRef.current){
+                      if (inputRef.current) {
                         inputRef.current.innerText = tree.name;
                       }
-                        setEdit(false)
+                      setEdit(false)
 
-                      }}
+                    }}
 
                   />
                 </>
@@ -94,14 +94,14 @@ const TagView = ({ tree, handleInsertNode, handleEditNode, handleDeleteNode }) =
                       </>
                     }
                     handleClick={handleNewChild} />
-                  <Action 
-                  className="reply" 
-                  type="Edit" 
-                  handleClick={() => setEdit(true)} />
-                  <Action 
-                  className="reply" 
-                  type="Delete"
-                  handleClick={handleDelete}
+                  <Action
+                    className="reply"
+                    type="Edit"
+                    handleClick={() => setEdit(true)} />
+                  <Action
+                    className="reply"
+                    type="Delete"
+                    handleClick={handleDelete}
                   />
                 </>
               )}
@@ -119,17 +119,17 @@ const TagView = ({ tree, handleInsertNode, handleEditNode, handleDeleteNode }) =
               onChange={(e) => setInput(e.target.value)}
               placeholder='type...'
             />
-            <Action 
-            className="reply" 
-            type="Add" 
-            handleClick={onAddChild} />
-            <Action 
-            className="reply" 
-            type="Cancel" 
-            handleClick={() => { 
-              setShowInput(false); 
-              setExpandArrow(false); 
-            }} 
+            <Action
+              className="reply"
+              type="Add"
+              handleClick={onAddChild} />
+            <Action
+              className="reply"
+              type="Cancel"
+              handleClick={() => {
+                setShowInput(false);
+                if (!tree?.items?.length) setExpandArrow(false);
+              }}
             />
           </div>
         )}
